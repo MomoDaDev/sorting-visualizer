@@ -1,8 +1,8 @@
+from logic.interfaces.sorting_algorithm_base import play_change, switch_numbers
 from ..helper import Helper as h
+from facade.sorting_facade import SORT_DELAY
 
-def bubble_sort(p):
-    if p == True:
-        print('Bubble Sort: ', '\n')
+def bubble_sort():
     """
     Bubble sort algorithm
     """
@@ -11,6 +11,5 @@ def bubble_sort(p):
             # Switch numbers if the number with the lower index is bigger
             if h.arr_num[j] > h.arr_num[j + 1]:
                 # Switch numbers
-                x = h.arr_num[j]
-                h.arr_num[j] = h.arr_num[j + 1]
-                h.arr_num[j + 1] = x
+                switch_numbers(j, j + 1)
+                play_change(SORT_DELAY)
